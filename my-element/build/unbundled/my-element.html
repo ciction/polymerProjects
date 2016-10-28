@@ -1,0 +1,27 @@
+<html><head><link rel="import" href="../polymer/polymer.html">
+
+
+
+</head><body><dom-module id="my-element">
+  <template>
+    <style>
+      :host{
+        display: block;
+      }
+      h3{
+        color: var(--my-element-h3-color, rgba(0,255,0,1));
+      }
+
+    </style>
+
+    <div class="alert" hidden="{{!shown}}">
+      <h2 style="color:red">Hello [[prop1]]</h2>
+      <h3>Hello [[prop2]]</h3>
+      <content select=".message"></content>
+    </div>
+
+  </template>
+
+  <script>Polymer({is:"my-element",properties:{prop1:{type:String,value:"my-element"},prop2:{type:String,value:"propertie 2"},shown:{type:Boolean,value:!0,notify:!0}}});</script>
+</dom-module>
+</body></html>
